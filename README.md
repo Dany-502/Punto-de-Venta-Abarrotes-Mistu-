@@ -350,3 +350,55 @@ La interfaz caja es un módulo de punto de venta (POS) que gestiona transaccione
 - _ConexionBaseDatos:_ Gestión de conexiones SQL
 - _Menu_Principal:_ Retorno al menú
 
+## Interfaz para agregar producto
+Esta interfaz permite registrar nuevos productos en el sistema. Ingresa nombre, descripción, precio y cantidad, validando que los campos estén completos y los valores numéricos sean correctos antes de insertarlos en la base de datos. Tras agregar el producto, limpia los campos y redirige al menú principal, mostrando confirmación de la operación.
+
+### Vista de la interfaz
+
+### Caracteristicas principales 
+1.-Interfaz gráfica:
+- Campos para: nombre, descripción, precio y cantidad del producto
+- Botones para: agregar, limpiar campos y cerrar/regresar
+
+2.-Operaciones:
+- Inserta nuevos registros en la tabla productos mediante consultas parametrizadas
+- Usa try-with-resources para manejo automático de conexiones
+
+### ¿Como funciona?
+1.-Inicialización:
+- Muestra formulario vacío listo para capturar datos
+
+2.-Registro:
+- Usuario ingresa datos del producto
+- Al hacer clic en "Agregar": Valida campos obligatorios. Verifica formato numérico en precio/cantidad. Ejecuta inserción SQL si todo es válido
+
+3.-Resultado:
+- Muestra confirmación de éxito o error específico
+- Limpia campos tras inserción exitosa
+- Redirige al Menu_Principal
+
+4.-Opciones disponibles:
+- "Limpiar": Vacía todos los campos
+- "Cerrar": Regresa al menú principal sin guardar
+
+### Validaciones
+1.-Campos obligatorios:
+- Nombre, precio y descripción no pueden estar vacíos (validarCampos())
+
+2-Formatos numéricos:
+- Precio debe ser un double válido
+- Cantidad debe ser un entero (int)
+
+3.-Feedback:
+- Mensajes claros cuando faltan datos o hay formatos inválidos
+- Confirmación explícita de registro exitoso
+
+### Dependencias
+● Librerias usadas para crear el JFrame:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+
+● Clases que se relacionan con el JFrame:
+- _ConexionBaseDatos:_ Gestión de conexiones SQL
+- _Menu_Principal:_ Retorno al menú
