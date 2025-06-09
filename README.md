@@ -15,7 +15,7 @@
 -- _Alonso Heredia Miguel Alberto_
 
 # ¿En que consiste nuestro proyecto?
-Este proyecto es un sistema de gestión para mini-supermercados desarrollado en Java Netbeans que integra módulos para administrar productos, usuarios y ventas. Permite registrar y editar productos con control de inventario, gestionar usuarios con roles específicos (administrador, cajero, almacenista) y validaciones de seguridad (contraseñas encriptadas, formatos de correo), además de procesar ventas generando tickets en PDF y enviando confirmaciones por correo. Utiliza una interfaz gráfica con Swing, se conecta a una base de datos PostgreSQL, e incluye funcionalidades como búsquedas dinámicas, validación de datos en tiempo real y generación de reportes, todo diseñado para optimizar y automatizar las operaciones de pequeños comercios de manera segura y eficiente.
+Este proyecto es un sistema de gestión para mini-supermercados desarrollado en Java Netbeans que integra módulos para administrar productos, usuarios y ventas. Permite registrar y editar productos con control de inventario, gestionar usuarios con roles específicos (administrador, cajero, almacenista) y validaciones de seguridad (contraseñas encriptadas, formatos de correo), además de procesar ventas generando tickets en PDF y enviando confirmaciones por correo. Utiliza interfaces graficas, se conecta a una base de datos PostgreSQL, e incluye funcionalidades como búsquedas dinámicas, validación de datos en tiempo real y generación de reportes, todo diseñado para optimizar y automatizar las operaciones de pequeños comercios de manera segura y eficiente.
 
 # Requisitos 
 
