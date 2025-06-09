@@ -34,7 +34,12 @@ La clase IntfzInicioScion es la interfaz gráfica de usuario (GUI) que permite a
 ![InicioSesion](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/InicioSesion.png)
 
 ### Caracteristicas principales
-
+- Valida credenciales (correo y contraseña) contra la base de datos PostgreSQL.
+- Muestra mensajes de error si los campos están vacíos o las credenciales son incorrectas.
+- Al iniciar sesión correctamente, almacena el nombre y rol del usuario en la clase UsuarioSesion
+- Redirige al Menu_Principal según el rol
+- Utiliza la clase ConexionBaseDatos para establecer la conexion con la base de datos principal.
+- Consulta la tabla usuarios con filtros por correo y contraseña.
 
 ### Dependencias 
   ●	_Base de datos:_ Requiere conexión activa con una tabla usuarios que contenga las columnas correo_electronico, contrasena, nombres y rol.
