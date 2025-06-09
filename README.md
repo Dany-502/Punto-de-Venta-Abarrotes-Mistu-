@@ -680,3 +680,4 @@ Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiem
 - Usada en confirmaciones de registro, notificaciones y recuperación de contraseñas.
 
 # Video Explicativo
+https://youtu.be/7m6rwbPrW9w
