@@ -284,3 +284,14 @@ La interfaz caja es un módulo de punto de venta (POS) que gestiona transaccione
 - Mensajes claros para problemas de stock/conexión BD
 
 ### Dependencias
+● Librerias usadas para crear el JFrame:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+- _itextpdf:_ Generación de tickets PDF (con logo, formato profesional)
+- _java.desktop:_ Para abrir PDF automáticamente
+
+● Clases que se relacionan con el JFrame:
+- _ConexionBaseDatos:_ Gestión de conexiones SQL
+- _Menu_Principal:_ Retorno al menú
+
