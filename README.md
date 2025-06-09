@@ -510,3 +510,133 @@ public class Encriptar {
 ```
 La clase Encriptar sirve para convertir texto plano en un hash seguro , generando una cadena hexadecimal de 64 caracteres irrevertible. Esto protege datos sensibles almacenándolos de forma cifrada en bases de datos, evitando que se lean directamente si hay un acceso no autorizado.
 
+## PDF_Registro
+```java
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.FileOutputStream;
+
+public class PDF_registro {
+
+    public static String generarPDF(String nombre, String usuario, String contrasena, String rutaCompletaArchivo) {
+        try {
+            Document documento = new Document();
+            PdfWriter.getInstance(documento, new FileOutputStream(rutaCompletaArchivo));
+            documento.open();
+
+            // Fuente para el título
+            Font fontTitulo = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
+            Paragraph titulo = new Paragraph("Cuenta Mistu Abarrotes", fontTitulo);
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            documento.add(titulo);
+
+            documento.add(Chunk.NEWLINE); // Espacio
+
+            // Imagen - asegúrate que la imagen esté en la ruta correcta dentro del proyecto
+            Image imagen = Image.getInstance(PDF_registro.class.getResource("/imagenes/LogoTienda-removebg-preview.png"));
+            imagen.scaleToFit(150, 150);
+            imagen.setAlignment(Element.ALIGN_CENTER);
+            documento.add(imagen);
+
+            documento.add(Chunk.NEWLINE); // Espacio debajo de la imagen
+
+            // Contenido del PDF
+            documento.add(new Paragraph("Hola " + nombre + ","));
+            documento.add(new Paragraph("Gracias por registrarte en Mi Tienda de Abarrotes."));
+            documento.add(new Paragraph(" "));
+            documento.add(new Paragraph("Tus credenciales de acceso son:"));
+            documento.add(new Paragraph("Usuario: " + usuario));
+            documento.add(new Paragraph("Contraseña: " + contrasena));
+
+            documento.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return rutaCompletaArchivo;
+    }
+}
+```
+La clase PDF_registro genera un documento PDF con los datos de registro de un usuario (nombre, usuario y contraseña), incluyendo un título, el logo de la tienda y un mensaje de bienvenida. Utiliza la biblioteca iTextPDF para crear el archivo en la ruta especificada, formateando el contenido con estilo profesional (alineación centrada, saltos de línea y fuente destacada para el título).
+
+## SoloLetras
+```java
+package Validaciones;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.JTextField;
+/**
+ *
+ * @author HP
+ */
+public class SoloLetras {
+    public static void validarLetras(JTextField campoTexto){
+        campoTexto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_SPACE) {
+                    e.consume(); 
+                }
+            }
+        });
+    }
+}
+```
+La clase SoloLetras es un validador que restringe la entrada en campos de texto (JTextField) para aceptar únicamente letras, espacios y la tecla de borrado (backspace). Implementa un KeyListener que intercepta cada tecla presionada y bloquea (mediante e.consume()) cualquier carácter que no sea alfabético, asegurando que no se puedan ingresar números o símbolos accidentalmente.
+
+## ValidarCorreoContra
+```java
+package Validaciones;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ValidarCorreoContra {
+    public static boolean validarCorreo(String correo){
+        String expresion = "^[a-zA-Z0-9_+&*-]+@(yahoo|outlook|gmail|hotmail|itoaxaca)\\.(com|mx|edu(\\.mx)?)$";
+        Pattern pattern = Pattern.compile(expresion);
+        Matcher matcher = pattern.matcher(correo);   
+    return matcher.matches();
+}
+    public static boolean validarContra(String contra){
+        String expresion = "[a-zA-Z0-9]{8}";
+        Pattern pattern = Pattern.compile(expresion);
+        Matcher matcher = pattern.matcher(contra);   
+        return matcher.matches();
+    }
+    
+}
+```
+La clase ValidarCorreoContra proporciona dos métodos estáticos para validar formatos:
+
+- validarCorreo(): Verifica si un correo electrónico cumple con el patrón usuario@dominio.extensión, aceptando dominios comunes (Gmail, Yahoo, Outlook, etc.) y extensiones (.com, .mx, .edu.mx).
+
+- validarContra(): Valida que una contraseña tenga exactamente 8 caracteres alfanuméricos (letras y números, sin símbolos).
+Ambos métodos usan expresiones regulares (regex) para garantizar que los datos ingresados cumplan con los formatos requeridos, devolviendo true o false según corresponda. Ideal para formularios de registro o login.
+
+## ValidarMinusculas
+```java
+package Validaciones;
+import javax.swing.text.*;
+/**
+ *
+ * @author HP
+ */
+public class ValidarMinusculas extends DocumentFilter {
+    @Override
+    public void insertString(FilterBypass bypass, int posicion, String texto, AttributeSet atributos) throws BadLocationException {
+        bypass.insertString(posicion, texto.toLowerCase(), atributos);
+    }
+    @Override
+     public void replace(FilterBypass bypass, int posicion, int longitud, String texto, AttributeSet atributos) throws BadLocationException {
+        bypass.replace(posicion, longitud, texto.toLowerCase(), atributos);
+    }
+}
+```
