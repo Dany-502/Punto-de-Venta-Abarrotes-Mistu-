@@ -2,10 +2,11 @@
 
 # Indice
 - [Autores](#Autores)
-- [Explicación general](#Explicación-general)
-- [Requisitos previos](#Requisitos-previos)
-- [Explicación del codigo](#Explicación-del-codigo)
-- [Instrucciones para importar el .jar y el JSON](#Instrucciones-para-importar-el-jar-y-el-JSON)
+- [¿En que consiste nuestro proyecto?](#¿En_que_consiste_nuestro_proyecto?)
+- [Requisitos](#Requisitos)
+- [Interfaces creadas](#Interfaces_creadas)
+- [Clases auxiliares](#Clases_auxiliares)
+- [Uso de librerias](#Uso_de_librerias)
 - [Video explicativo](#Video-explicativo)
 
 # Autores
@@ -452,7 +453,7 @@ Esta interfaz permite modificar productos existentes en el sistema. Recibe los d
 - _ConexionBaseDatos:_ Gestión de conexiones SQL
 - _Menu_Principal:_ Retorno al menú
 
-# Clases realizadas
+# Clases auxiliares
 ## ConexionBaseDatos
 ```java
 import java.sql.Connection;
@@ -642,3 +643,28 @@ public class ValidarMinusculas extends DocumentFilter {
 ```
 Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiempo real para cualquier texto ingresado en un componente Swing (como JTextField). Hereda de DocumentFilter y sobrescribe los métodos insertString() y replace() para transformar automáticamente los caracteres a minúsculas antes de insertarlos.
 
+# Uso de librerias
+## Generador Captcha
+1.- Función: Implementa sistemas de verificación CAPTCHA para distinguir usuarios humanos de bots.
+
+2.-Características clave:
+-  Integración en formularios web para prevenir spam y automatización.
+
+## Generador de PDF
+1.- Función: Crear y manipular documentos PDF de forma programática.
+
+2.-Características clave:
+
+- Soporta fuentes personalizadas, estilos y alineación.
+- Permite añadir logos, marcas de agua y firmas digitales.
+- Usada en comprobantes, reportes y documentos legales.
+
+## Envio de correos
+1.- Función: Enviar correos electrónicos desde aplicaciones Java.
+
+2.-Características clave:
+- Envío con autenticación OAuth2 o contraseñas de aplicación (ej: Gmail).
+- Soporte para adjuntos, HTML en el cuerpo y correos masivos.
+- Usada en confirmaciones de registro, notificaciones y recuperación de contraseñas.
+
+# Video Explicativo
