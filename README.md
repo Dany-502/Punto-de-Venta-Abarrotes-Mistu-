@@ -218,3 +218,15 @@ Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en
 - Manejo de errores SQL con mensajes descriptivos
 
 ### Dependencias
+● Librerias usadas para crear el JFrame:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+
+● Clases que se relacionan con el JFrame:
+- _Registrarse:_ Formulario de registro de nuevos usuarios
+- _EditarUsuario:_ Formulario para modificar usuarios existentes
+- _Menu_Principal:_ Ventana principal del sistema
+- _ConexionBaseDatos:_ Maneja la conexión a la base de datos
+
+  
