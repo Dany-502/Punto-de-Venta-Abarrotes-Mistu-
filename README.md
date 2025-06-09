@@ -640,3 +640,5 @@ public class ValidarMinusculas extends DocumentFilter {
     }
 }
 ```
+Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiempo real para cualquier texto ingresado en un componente Swing (como JTextField). Hereda de DocumentFilter y sobrescribe los métodos insertString() y replace() para transformar automáticamente los caracteres a minúsculas antes de insertarlos.
+
