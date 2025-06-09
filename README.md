@@ -31,6 +31,7 @@ Este proyecto es un sistema de gestión para mini-supermercados desarrollado en 
 La clase IntfzInicioScion es la interfaz gráfica de usuario (GUI) que permite a los usuarios iniciar sesión en el sistema. Está implementada en Java Swing y conectada a una base de datos donde se valida que el correo electrónico y la contraseña coincidan con un usuario registrado.
 
 ### Vista de la interfaz
+![InicioSesion](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/InicioSesion.png)
 
 ### Caracteristicas principales
 
@@ -105,6 +106,7 @@ La clase Registrarse es una interfaz gráfica (Java Swing) para registrar nuevos
 Menu_Principal es la interfaz principal del sistema Mi Tienda de Abarrotes, diseñada en Java Swing. Esta clase permite la visualización y gestión de productos en inventario, realizando operaciones como: Mostrar todos los productos registrados, buscar productos por ID o nombre, Agregar, editar y eliminar productos, navegar hacia otras secciones (usuarios, ventas), restringir funcionalidades según el rol del usuario
 
 ### Vista de la interfaz
+![MenuPrincipal](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/MenuPrincipal.png)
 
 ### Caracteristicas principales 
 1.-Interfaz gráfica:
@@ -174,6 +176,7 @@ Al ser el menú principal, este contiene varias funciones:
 Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en una tabla con opciones para agregar, editar y eliminar registros. Este se conecta a la base de datos para cargar y modificar información, implementa validaciones de selección y confirmaciones antes de eliminar, además, redirige a otros JFrame como Registrarse y EditarUsuario.
 
 ### Vista de la interfaz
+![usuarios](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/Usuarios.png)
 
 ### Caracteristicas principales
 1.-Interfaz gráfica:
@@ -234,6 +237,7 @@ Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en
 Esta interfaz permite modificar datos de usuarios existentes. Recibe los datos actuales del usuario (nombres, apellidos, teléfono, etc.) y permite editarlos, validando que todos los campos estén completos antes de actualizar la base de datos. Al guardar los cambios, regresa a la ventana de gestión de usuarios (Usuarios) y muestra confirmación de la operación.
 
 ### Vista de la interfaz
+![EditarUsuarios](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/EditarUsuario.png)
 
 ### Caracteristicas principales 
 1.-Interfaz gráfica:
@@ -290,6 +294,7 @@ Esta interfaz permite modificar datos de usuarios existentes. Recibe los datos a
 La interfaz caja es un módulo de punto de venta (POS) que gestiona transacciones comerciales, permitiendo seleccionar productos, calcular totales y generar tickets en PDF. Implementa control de inventario en tiempo real, validación de stock y búsqueda de productos. Incluye funciones para modificar pedidos y conexión directa con la base de datos para actualizar existencias.
 
 ### Vista de la interfaz
+![Caja](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/Caja.png)
 
 ### Caracteristicas principales 
 1.-Interfaz gráfica:
@@ -355,11 +360,12 @@ La interfaz caja es un módulo de punto de venta (POS) que gestiona transaccione
 Esta interfaz permite registrar nuevos productos en el sistema. Ingresa nombre, descripción, precio y cantidad, validando que los campos estén completos y los valores numéricos sean correctos antes de insertarlos en la base de datos. Tras agregar el producto, limpia los campos y redirige al menú principal, mostrando confirmación de la operación.
 
 ### Vista de la interfaz
+![AgregarProducto](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/IngresarProducto.png)
 
 ### Caracteristicas principales 
 1.-Interfaz gráfica:
-- Campos para: nombre, descripción, precio y cantidad del producto
-- Botones para: agregar, limpiar campos y cerrar/regresar
+- Contiene campos para: nombre, descripción, precio y cantidad del producto
+- Tiene botones para: agregar, limpiar campos y cerrar/regresar
 
 2.-Operaciones:
 - Inserta nuevos registros en la tabla productos mediante consultas parametrizadas
@@ -408,6 +414,7 @@ Esta interfaz permite registrar nuevos productos en el sistema. Ingresa nombre, 
 Esta interfaz permite modificar productos existentes en el sistema. Recibe los datos actuales del producto (ID, nombre, descripción, precio y cantidad) y permite editarlos, validando que todos los campos estén completos y los valores numéricos sean correctos antes de actualizar la base de datos. Al guardar los cambios, regresa al menú principal mostrando confirmación de la operación.
 
 ### Vista de la interfaz
+![EditarProducto](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/bad2b1593a0bd219a307e70c8ea56c806cdce229/Build/EditarProducto.png)
 
 ### Caracteristicas principales 
 1.-Interfaz gráfica:
