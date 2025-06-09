@@ -262,7 +262,28 @@ Esta interfaz permite modificar datos de usuarios existentes. Recibe los datos a
 - Si falla: muestra mensaje de error específico
 
 ### Validaciones
+1.-Campos obligatorios:
+- Verifica que ningún campo esté vacío (validarCampos())
+- Incluye validación de fecha seleccionada
 
+2.-SQL:
+- Uso de PreparedStatement para evitar inyecciones
+- Conversión segura de tipos (especialmente fechas)
+
+3.-Retroalimentacion:
+- Mensajes claros cuando faltan datos
+- Confirmación explícita de actualización exitosa
+
+### Dependencias
+● Librerias usadas para crear el JFrame:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+
+● Clases que se relacionan con el JFrame:
+- _ConexionBaseDatos:_ Gestión de conexiones SQL
+- _Usuarios:_ Ventana de gestión de usuarios
+- _Menu_Principal:_ Retorno al menú
   
 ## Interfaz de Caja
 La interfaz caja es un módulo de punto de venta (POS) que gestiona transacciones comerciales, permitiendo seleccionar productos, calcular totales y generar tickets en PDF. Implementa control de inventario en tiempo real, validación de stock y búsqueda de productos. Incluye funciones para modificar pedidos y conexión directa con la base de datos para actualizar existencias.
