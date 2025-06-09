@@ -6,7 +6,7 @@
 - [Requisitos](#Requisitos)
 - [Interfaces creadas](#Interfaces_creadas)
 - [Clases auxiliares](#Clases_auxiliares)
-- [Uso de librerias](#Uso_de_librerias)
+- [librerias usadas](#Librerias_usadas)
 - [Video explicativo](#Video-explicativo)
 
 # Autores
@@ -655,7 +655,7 @@ public class ValidarMinusculas extends DocumentFilter {
 ```
 Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiempo real para cualquier texto ingresado en un componente Swing (como JTextField). Hereda de DocumentFilter y sobrescribe los métodos insertString() y replace() para transformar automáticamente los caracteres a minúsculas antes de insertarlos.
 
-# Uso de librerias
+# Librerias usadas
 ## Generador Captcha
 1.- Función: Implementa sistemas de verificación CAPTCHA para distinguir usuarios humanos de bots.
 
