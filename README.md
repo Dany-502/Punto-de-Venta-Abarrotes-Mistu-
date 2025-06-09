@@ -88,19 +88,16 @@ La clase Registrarse es una interfaz gráfica (Java Swing) para registrar nuevos
 ● Valida que solo se ingresen letras en nombres y apellidos
 
 ### Dependencias
-●	Librerías personalizadas:
+● Librerías utilizadas:
+- SoloLetras: Clase que verifica que solo se ingresen letras en un txt
+- ValidarCorreoContra: Clase que verifica un correo valido.
+- JavaMail: Es utilizado para enviar el correo de confirmación.
+- toedter.calendar.JDateChooser: Utilizado para el selector de fecha.
 
-	SoloLetras, ValidarCorreoContra, PDF_registro
-
-●	UI personalizados:
-
-	LIB.JPanelRound, LIB.JTexfieldPH_FielTex, CaptchaPanel, etc.
-
-●	Librerías externas:
-
-    JavaMail para envío de correo.
-
-    toedter.calendar.JDateChooser para el selector de fecha.
+● Componentes visuales personalizados:
+- LIB.JPanelRound: Paneles que permiten agregar mas colores y formas
+- CaptchaPanel: Sirve para verificar si el usuario que está interactuando con una página web o aplicación es una persona real, y no un bot o programa automatizado
+- PDF_registro: Permite crear archivos pdf con contendio personalizado
 
 
 ## Menu Principal
@@ -159,13 +156,13 @@ Al ser el menú principal, este contiene varias funciones:
 - Muestra mensajes de "Acceso Restringido" para funciones no permitidas
 
 ### Dependencias 
-● Bibliotecas usadas:
+● Librerias usadas para crear el JFrame:
 - _javax.swing:_ Para componentes gráficos
 - _java.awt:_ Para manejo de eventos y colores
 - _java.sql:_ Para conexión con base de datos
 - _java.math.BigDecimal:_ Para manejo de valores monetarios y cantidades
 
-● Clases relacionadas:
+● Clases que se relacionan con el JFrame:
 - _Agregar:_ Ventana para añadir productos
 - _Editar:_ Ventana para modificar productos
 - _Caja:_ Módulo de ventas
