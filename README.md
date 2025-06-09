@@ -127,4 +127,50 @@ Menu_Principal es la interfaz principal del sistema Mi Tienda de Abarrotes, dise
 - Redirección a las siguientes ventanas: agregar, editar, caja y usuarios
 
 ### ¿Como funciona?
-Al si
+Al ser el menú principal, este contiene varias funciones:
+
+1.-Inicializacion:
+- Al crearse la ventana, carga los datos del usuario actual (UsuarioSesion)
+- Muestra los productos en la tabla (mostrarDatos())
+- Configura los permisos según el rol (opcionRol())
+
+2.-Interacciones que puede hacer el usuario:
+- Agregar: Abre ventana para agregar nuevos productos
+- Editar: Abre ventana de edición con datos del producto seleccionado
+- Eliminar: Confirma y elimina el producto seleccionado
+- Venta: Abre módulo de caja/ventas
+- Usuarios: Abre gestión de usuarios (solo para administradores)
+- Salir: Confirma y cierra la aplicación
+
+       Al abrir otras ventanas, cierra la ventana actual (dispose())
+       Al salir, termina la aplicación (System.exit(0))
+
+### Validaciones 
+1.-Selección de productos:
+- Verifica que se haya seleccionado un producto antes de editar/eliminar
+- Muestra mensajes de advertencia si no hay selección
+
+2.-Confirmaciones:
+- Pide confirmación antes de eliminar productos
+- Pide confirmación antes de salir de la aplicación
+
+3-Control de acceso:
+- Valida el rol del usuario para habilitar/deshabilitar funciones
+- Muestra mensajes de "Acceso Restringido" para funciones no permitidas
+
+### Dependencias 
+● Bibliotecas usadas:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+- _java.math.BigDecimal:_ Para manejo de valores monetarios y cantidades
+
+● Clases relacionadas:
+- _Agregar:_ Ventana para añadir productos
+- _Editar:_ Ventana para modificar productos
+- _Caja:_ Módulo de ventas
+- _Usuarios:_ Gestión de usuarios
+
+
+
+
