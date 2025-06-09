@@ -229,6 +229,40 @@ Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en
 - _Menu_Principal:_ Ventana principal del sistema
 - _ConexionBaseDatos:_ Maneja la conexión a la base de datos
 
+## Interfaz para editar usuario
+Esta interfaz permite modificar datos de usuarios existentes. Recibe los datos actuales del usuario (nombres, apellidos, teléfono, etc.) y permite editarlos, validando que todos los campos estén completos antes de actualizar la base de datos. Al guardar los cambios, regresa a la ventana de gestión de usuarios (Usuarios) y muestra confirmación de la operación.
+
+### Vista de la interfaz
+
+### Caracteristicas principales 
+1.-Interfaz gráfica:
+- Campos para editar: apellidos, nombres, teléfono, fecha de nacimiento y correo
+- Selector de fecha (dateFecha) con formato "yyyy-MM-dd"
+- Botones para: guardar cambios, cancelar y regresar
+
+2.-Funcionalidad principal:
+- Actualiza registros en la tabla usuarios mediante consultas parametrizadas
+- Usa el idUsuario como clave para identificar el registro a modificar
+
+3.-Navegación:
+- Redirección a Usuarios (tras edición exitosa)
+- Opción de cancelar y volver al Menu_Principal
+
+### ¿Como funciona?
+1.-Inicialización:
+- Recibe los datos actuales del usuario en el constructor
+- Rellena automáticamente los campos del formulario
+
+2.-Edición:
+- El usuario modifica los campos necesarios
+- Al hacer clic en "Editar": Valida que todos los campos tengan datos. Prepara y ejecuta la consulta SQL de actualización. Muestra confirmación/error
+
+3.-Resultado:
+- Si es exitoso: cierra el formulario y recarga la lista de usuarios
+- Si falla: muestra mensaje de error específico
+
+### Validaciones
+
   
 ## Interfaz de Caja
 La interfaz caja es un módulo de punto de venta (POS) que gestiona transacciones comerciales, permitiendo seleccionar productos, calcular totales y generar tickets en PDF. Implementa control de inventario en tiempo real, validación de stock y búsqueda de productos. Incluye funciones para modificar pedidos y conexión directa con la base de datos para actualizar existencias.
