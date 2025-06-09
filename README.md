@@ -169,5 +169,52 @@ Al ser el menú principal, este contiene varias funciones:
 - _Usuarios:_ Gestión de usuarios
 
 
+## Usuarios
+Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en una tabla con opciones para agregar, editar y eliminar registros. Este se conecta a la base de datos para cargar y modificar información, implementa validaciones de selección y confirmaciones antes de eliminar, además, redirige a otros JFrame como Registrarse y EditarUsuario.
 
+### Vista de la interfaz
 
+### Caracteristicas principales
+1.-Interfaz gráfica:
+- Ventana de gestión de usuarios
+- Muestra una tabla (tablaUsuarios) con todos los usuarios registrados
+- Contiene botones para: agregar, editar, eliminar usuarios y regresar al menú principal
+- La tabla muestra: ID, apellidos, nombres, teléfono, fecha de nacimiento y correo
+
+2.-Operaciones disponibles:
+- _Agregar:_ Abre formulario de registro (Registrarse)
+- _Editar:_ Abre formulario de edición (EditarUsuario) con datos del usuario seleccionado
+- _Eliminar:_ Elimina usuarios con confirmación previa
+
+3.-Integración de la base de datos:
+- Conexión a tabla usuarios en la base de datos
+- Mapeo de columnas específicas (fechas como java.sql.Date)
+
+4.-Integración con otras ventanas:
+- Redirección a las siguientes ventanas: agregarUsuario, editar, y menu principal
+
+### ¿Como funciona?
+1.-Inicialización:
+- Al abrirse, carga y muestra todos los usuarios (mostrarDatos())
+- Configura la tabla con tipos de datos específicos por columna
+
+2.-Interacciones que puede hacer el usuario:
+- Agregar: Abre ventana de registro y cierra la actual
+- Editar: Valida que se haya seleccionado un usuario. Pasa todos los datos a la ventana de edición. Cierra la ventana actual
+- Eliminar: Valida selección. Pide confirmación. Si se confirma, elimina el usuario y actualiza la tabla
+- Cerrar: Regresa al menú principal
+
+### Validaciones
+1.-Selección de usuarios:
+- Verifica que se haya seleccionado un usuario antes de editar/eliminar
+- Muestra mensajes de advertencia si no hay selección
+
+2.-Confirmaciones:
+- Pide confirmación explícita antes de eliminar usuarios
+- Muestra detalles del usuario a eliminar (nombre e ID)
+
+3.-Integridad de datos:
+- Conversión segura de tipos al extraer valores de la tabla
+- Manejo de errores SQL con mensajes descriptivos
+
+### Dependencias
