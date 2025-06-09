@@ -169,7 +169,7 @@ Al ser el menú principal, este contiene varias funciones:
 - _Usuarios:_ Gestión de usuarios
 
 
-## Usuarios
+## Interfaz de control de Usuarios
 Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en una tabla con opciones para agregar, editar y eliminar registros. Este se conecta a la base de datos para cargar y modificar información, implementa validaciones de selección y confirmaciones antes de eliminar, además, redirige a otros JFrame como Registrarse y EditarUsuario.
 
 ### Vista de la interfaz
@@ -230,3 +230,57 @@ Interfaz que gestiona los usuarios registrados en el sistema, mostrando datos en
 - _ConexionBaseDatos:_ Maneja la conexión a la base de datos
 
   
+## Interfaz de Caja
+La interfaz caja es un módulo de punto de venta (POS) que gestiona transacciones comerciales, permitiendo seleccionar productos, calcular totales y generar tickets en PDF. Implementa control de inventario en tiempo real, validación de stock y búsqueda de productos. Incluye funciones para modificar pedidos y conexión directa con la base de datos para actualizar existencias.
+
+### Vista de la interfaz
+
+### Caracteristicas principales 
+1.-Interfaz gráfica:
+- Tabla de productos disponibles con búsqueda por ID/nombre
+- Tabla de pedido actual con cantidades y subtotales
+- Calculadora automática de totales
+- Botones para: confirmar venta, cancelar, modificar pedido y regresar
+
+2.-Gestión de ventas:
+- Sistema de doble-clic para agregar productos con validación de stock
+- Modificación de cantidades en pedidos existentes
+- Generación de tickets PDF con numeración automática
+
+3.-Integración con la base de datos:
+- Actualización automática de inventario al confirmar ventas
+- Búsqueda dinámica con filtros combinados (ID + nombre)
+
+4.-Componentes especiales:
+- Listener para cálculo automático de totales
+- Formateo profesional de tickets (logo, fecha localizada, alineación)
+
+### ¿Como funciona?
+1.-Inicialización:
+- Carga todos los productos disponibles al abrirse
+- Configura listener para cálculo automático de totales
+
+2.-Proceso de venta:
+- Agrega productos: Dar doble click, ingresar producto → validación de stock
+- Modificar producto: Seleccionar producto, ajustar cantidades o eliminar
+- Confirmar cambios: Actualiza inventario en BD. Genera PDF con ticket. Reinicia interfaz para nueva venta
+
+3.-Buscar producto:
+- Filtra productos por ID o nombre
+
+### Validaciones
+1.-Stock:
+- Impide agregar más unidades de las disponibles
+- Verifica disponibilidad antes de confirmar venta
+
+2.-Datos:
+- Valida formatos numéricos en cantidades
+- Maneja casos de productos nulos o sin selección
+
+3.-Confirmaciones:
+- Pide confirmación para operaciones críticas (eliminar productos)
+
+4.-Errores:
+- Mensajes claros para problemas de stock/conexión BD
+
+### Dependencias
