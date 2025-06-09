@@ -24,7 +24,7 @@
 
 3.- Conexión a internet.
 
-# Explicación de cada interfaz creada 
+# Interfaces creadas 
 
 ## Pantalla de Inicio de Sesión  
 La clase IntfzInicioScion es la interfaz gráfica de usuario (GUI) que permite a los usuarios iniciar sesión en el sistema. Está implementada en Java Swing y conectada a una base de datos donde se valida que el correo electrónico y la contraseña coincidan con un usuario registrado.
@@ -451,3 +451,62 @@ Esta interfaz permite modificar productos existentes en el sistema. Recibe los d
 ● Clases que se relacionan con el JFrame:
 - _ConexionBaseDatos:_ Gestión de conexiones SQL
 - _Menu_Principal:_ Retorno al menú
+
+# Clases realizadas
+## ConexionBaseDatos
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConexionBaseDatos {
+    private static final String URL = "jdbc:postgresql://localhost:5432/minisupermitsuuu";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "miguelito159a";
+
+    static {
+        try {
+            // Carga el driver de PostgreSQL al iniciar la clase
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Error: Driver PostgreSQL no encontrado", e);
+        }
+    }
+
+    public static Connection conectar() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+}
+```
+La clase ConexionBaseDatos es utilizado para gestionar conexiones a una base de datos PostgreSQL. Utiliza el patrón Singleton implícito a través de métodos estáticos y carga el driver JDBC de PostgreSQL durante la inicialización de la clase. Establece y retorna una nueva conexión usando las credenciales predefinidas.
+
+## EncriptarContraseñas
+```java
+package Validaciones;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+/**
+ *
+ * @author migue
+ */
+public class Encriptar {
+    public static String hashSHA256(String textoPlano) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(textoPlano.getBytes("UTF-8"));
+
+            // Convertir el array de bytes a una representación en hexadecimal
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+
+        } catch (Exception ex) {
+            throw new RuntimeException("Error al encriptar contraseña", ex);
+        }
+    }
+}
+```
+La clase Encriptar sirve para convertir texto plano en un hash seguro , generando una cadena hexadecimal de 64 caracteres irrevertible. Esto protege datos sensibles almacenándolos de forma cifrada en bases de datos, evitando que se lean directamente si hay un acceso no autorizado.
+
