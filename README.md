@@ -402,3 +402,52 @@ Esta interfaz permite registrar nuevos productos en el sistema. Ingresa nombre, 
 ● Clases que se relacionan con el JFrame:
 - _ConexionBaseDatos:_ Gestión de conexiones SQL
 - _Menu_Principal:_ Retorno al menú
+
+## Interfaz para editar producto
+Esta interfaz permite modificar productos existentes en el sistema. Recibe los datos actuales del producto (ID, nombre, descripción, precio y cantidad) y permite editarlos, validando que todos los campos estén completos y los valores numéricos sean correctos antes de actualizar la base de datos. Al guardar los cambios, regresa al menú principal mostrando confirmación de la operación.
+
+### Vista de la interfaz
+
+### Caracteristicas principales 
+1.-Interfaz gráfica:
+- Campos pre-llenados con los datos actuales del producto
+- Botones para: guardar cambios, cancelar y cerrar
+
+2-Operaciones:
+- Actualiza registros en la tabla productos mediante consultas parametrizadas
+- Usa el idArticulo como clave para identificar el producto a modificar
+
+### ¿Como funciona?
+1.-Inicialización:
+- Recibe los datos actuales del producto en el constructor
+- Pre-llena los campos del formulario
+
+2.-Edición:
+- Usuario modifica los campos necesarios
+- Al hacer clic en "Editar": Valida campos obligatorios. Verifica formatos numéricos. Ejecuta actualización SQL si todo es válido
+
+3.-Resultado:
+- Muestra confirmación de éxito/error
+- Redirige al menú principal tras operación exitosa
+
+### Validaciones
+1.-Campos obligatorios:
+- Nombre, descripción, precio y cantidad no pueden estar vacíos
+
+2.-Formatos numéricos:
+- Precio debe ser un valor decimal válido (double)
+- Cantidad debe ser un entero válido (int)
+
+3.-Retroalimentacion:
+- Mensajes claros para campos vacíos o formatos inválidos
+- Confirmación explícita de actualización exitosa
+
+### Dependencias
+● Librerias usadas para crear el JFrame:
+- _javax.swing:_ Para componentes gráficos
+- _java.awt:_ Para manejo de eventos y colores
+- _java.sql:_ Para conexión con base de datos
+
+● Clases que se relacionan con el JFrame:
+- _ConexionBaseDatos:_ Gestión de conexiones SQL
+- _Menu_Principal:_ Retorno al menú
