@@ -2,11 +2,12 @@
 
 # Indice
 - [Autores](#Autores)
-- [¿En que consiste nuestro proyecto?](#¿En_que_consiste_nuestro_proyecto?)
+- [Descripcion del proyecto](#Descripcion_del_proyecto)
 - [Requisitos](#Requisitos)
 - [Interfaces creadas](#Interfaces_creadas)
 - [Clases auxiliares](#Clases_auxiliares)
 - [librerias usadas](#Librerias_usadas)
+- [Instrucciones de implementación](#Instrucciones_de_implementación)
 - [Video explicativo](#Video-explicativo)
 
 # Autores
@@ -14,7 +15,7 @@
 
 -- _Alonso Heredia Miguel Alberto_
 
-# ¿En que consiste nuestro proyecto?
+# Descripcion del proyecto
 Este proyecto es un sistema de gestión para mini-supermercados desarrollado en Java Netbeans que integra módulos para administrar productos, usuarios y ventas. Permite registrar y editar productos con control de inventario, gestionar usuarios con roles específicos (administrador, cajero, almacenista) y validaciones de seguridad (contraseñas encriptadas, formatos de correo), además de procesar ventas generando tickets en PDF y enviando confirmaciones por correo. Utiliza interfaces graficas, se conecta a una base de datos PostgreSQL, e incluye funcionalidades como búsquedas dinámicas, validación de datos en tiempo real y generación de reportes, todo diseñado para optimizar y automatizar las operaciones de pequeños comercios de manera segura y eficiente.
 
 # Requisitos 
@@ -680,19 +681,20 @@ Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiem
 - Usada en confirmaciones de registro, notificaciones y recuperación de contraseñas.
 
 # Instrucciones de implementación 
-1.-Descargar y descomprimir el archivo .zip 
+## 1.-Descargar y descomprimir el archivo .zip 
+![paso1](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/a34c9e94f14b160bac15c357c20a675719e3078b/Build/Paso1.png)
 
+## 2.-Abrir netbeans y buscar en la interfaz de opciones "abrir proyecto"
+![paso2](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/a34c9e94f14b160bac15c357c20a675719e3078b/Build/Paso2.png)
 
-2.-Abrir netbeans y buscar en la interfaz de opciones "abrir proyecto"
+## 3.-Busca el proyecto en tus archivos y abrelo.
+![paso3](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/a34c9e94f14b160bac15c357c20a675719e3078b/Build/Paso3.png)
 
+## 4.-Una vez abierto te pedira incorporar las librerias utilizadas para crear el proyecto.
+![paso4](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/a34c9e94f14b160bac15c357c20a675719e3078b/Build/Paso4.png)
 
-3.-Busca el proyecto en tus archivos y abrelo.
-
-
-4.-Una vez abierto te pedira incorporar las librerias utilizadas para crear el proyecto.
-
-
-5.-Simplemente incorporalos con las librerias que vienen en el archivo zip
+## 5.-Simplemente incorporalos con las librerias que vienen en el archivo zip
+![paso5](https://github.com/Dany-502/Punto-de-Venta-Abarrotes-Mistu-/blob/a34c9e94f14b160bac15c357c20a675719e3078b/Build/Paso5.png)
 
 # Video Explicativo
 https://youtu.be/7m6rwbPrW9w
