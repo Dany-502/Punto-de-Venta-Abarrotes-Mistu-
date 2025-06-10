@@ -682,11 +682,15 @@ Esta clase es un filtro de texto que fuerza la conversión a minúsculas en tiem
 # Instrucciones de implementación 
 1.-Descargar y descomprimir el archivo .zip 
 
+
 2.-Abrir netbeans y buscar en la interfaz de opciones "abrir proyecto"
+
 
 3.-Busca el proyecto en tus archivos y abrelo.
 
+
 4.-Una vez abierto te pedira incorporar las librerias utilizadas para crear el proyecto.
+
 
 5.-Simplemente incorporalos con las librerias que vienen en el archivo zip
 
